@@ -1,0 +1,5 @@
+curl -X DELETE "https://gateway-a.watsonplatform.net/visual-recognition/api/v3/classifiers/{“Diagnosis_706812174”}?api_key={8b4fdb53d35c1282ecde8f0ebc866f03690b1e1e}&version=2016-05-20"
+
+curl -X POST -F "health_positive_examples=@Normal.zip" -F "glaucoma_positive_examples=@GlaucomaImages.zip" -F "name=Diagnosis" "https://gateway-a.watsonplatform.net/visual-recognition/api/v3/classifiers?api_key={8b4fdb53d35c1282ecde8f0ebc866f03690b1e1e}&version=2016-05-20"
+
+curl -X POST -F "images_file=@Im034.jpg" -F "parameters=@myparams.json" "https://gateway-a.watsonplatform.net/visual-recognition/api/v3/classify?api_key={8b4fdb53d35c1282ecde8f0ebc866f03690b1e1e}&version=2016-05-20&threshold=0"
