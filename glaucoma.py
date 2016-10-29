@@ -47,11 +47,11 @@ def rotate(image,degrees):
 glaucomaData = []
 glaucomaLabels = []
 counter = 0
-for i in os.listdir("/Users/fair/Desktop/MECH3921/IBM/Training/Glaucoma Images"):
+for i in os.listdir("path"):
     if i.endswith(".jpg"): 
         
         
-        image = cv2.imread("/Users/fair/Desktop/MECH3921/IBM/Training/Glaucoma Images/" + i)
+        image = cv2.imread("path/" + i)
         
         new_image = cv2.resize(image,(image_size,image_size))
         
@@ -79,11 +79,11 @@ for i in os.listdir("/Users/fair/Desktop/MECH3921/IBM/Training/Glaucoma Images")
 healthyData = []
 healthyLabels = []
 counter = 0
-for i in os.listdir("/Users/fair/Desktop/MECH3921/IBM/Training/Normal"):
+for i in os.listdir("path"):
     if i.endswith(".jpg"): 
         
         
-        image = cv2.imread("/Users/fair/Desktop/MECH3921/IBM/Training/Normal/" + i)
+        image = cv2.imread("path/" + i)
         new_image = cv2.resize(image,(image_size,image_size))
         
         healthyData.append(new_image)
@@ -288,4 +288,4 @@ with tf.Session(graph=graph) as sess:
 		result = "Thanks for using our app!\nThe result of your diagnosis is glaucoma, the possibility is " + str(glau/10.0)
       else:
 		result = "Thanks for using our app!\nThe result of your diagnosis is healthy, the possibility is " + str(heal/10.0)
-send_mail('qili2960@uni.sydney.edu.au', to_email, 'Your Daignosis result', result, username='qili2960@uni.sydney.edu.au', password='Alex.811')
+send_mail('user email', to_email, 'Your Daignosis result', result, username='user email', password='user password')
